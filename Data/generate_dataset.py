@@ -42,7 +42,7 @@ for searchs in [love, person, world]:
         sentences = search_page.content.split('\n')
         print('Writing...')
         for sentence in sentences:
-            if '==' not in sentence and '===' not in sentence and sentence != '':
+            if '==' not in sentence and '===' not in sentence and sentence and (len(sentence) > 30 or ':' not in sentence):
                 ds_file.write('{}-->{}\n'.format(lang, sentence))
 ds_file.close()
 

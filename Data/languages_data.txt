@@ -308,7 +308,6 @@ es-->La iglesia católica, reafirmando las enseñanzas del su Magisterio y de la
 es-->En cierto sentido, el amor abarca la visión islámica de la vida como una hermandad universal que se aplica a todos los que mantienen la fe. No existen referencias directas que afirmen que Dios es amor, pero entre los 99 nombres de Dios (Allah), existe el nombre de Al-Wadūd (الودود), o «el Amante», que se encuentra en la Azora 11:90 y en la Azora 85:14. Se refiere a Dios como «pleno de amorosa amabilidad». Todos los que tengan fe tendrán el amor de Dios, aunque el grado de amor recibido y el esfuerzo puesto para conseguirlo depende del individuo en sí mismo.
 es-->Ishq, o el amor divino, es el tema principal del sufismo. Los sufís creen que el amor es una proyección de la esencia de Dios sobre el universo. Dios desea reconocer la belleza, de modo que, cuando, por ejemplo, alguien se mira en un espejo, es Dios quien se «mira» a sí mismo dentro de la dinámica de la naturaleza. Ya que todo es un reflejo de Dios, la escuela del sufismo practica ver la belleza dentro de la aparente fealdad. El sufismo se refiere a menudo a ello como la religión del amor. Dios aparece en tres términos principales, que son el Amante, el Amado y el Amor, pudiéndose encontrar el último de estos términos frecuentemente en la poesía sufí. Un punto de vista común es que, a través del amor, la humanidad puede volver a su pureza y gracia inherentes. Los santos sufistas son tristemente célebres por estar «borrachos» debido a su amor divino; por lo tanto, es constante la referencia al vino en la poesía y la música sufís.
 es-->La palabra «amor» aparece en el Corán más de 80 veces en diferentes formas y significados; todas las aleyas que incluyen la palabra «amor», sean positivas o negativas, aseguran la grandeza del valor del amor en establecer las relaciones en sus diferentes formas y círculos.[58]​
-es-->Algunos ejemplos:
 es-->«Al·lâh traerá a otros a los que amará y por los que será amado».
 es-->«Di: Si amáis a Al·lâh, seguidme, que Al·lâh os amará y perdonará vuestras faltas. Al·lâh es Perdonador y Compasivo».
 es-->«Y pedid perdón a vuestro Señor y volveos a Él, pues es cierto que mi Señor es Compasivo, Afectuoso».
@@ -633,7 +632,6 @@ it-->Venere: dea della mitologia romana.
 it-->Afrodite: dea della mitologia greca.
 it-->Eros: dio della mitologia greca.
 it-->Freyja: dea della mitologia norrena.
-it-->Kama: dio dell'induismo.
 it-->Xochipilli: dio della mitologia azteca.
 it-->Il sentimento dell'amore è spesso la base d'ispirazione delle principali manifestazioni artistiche quali la musica, la letteratura, le arti figurative e il cinema.
 it-->Publio Virgilio Marone nelle sue Bucoliche (X, 69) ebbe a dire "Omnia vincit amor et nos cedamus amori" (lett. "L'amore vince tutto, anche noi cediamo all'amore")", verso divenuto celebre e ripreso in seguito anche da vari altri autori; nella sua qualità di locuzione latina è stata immortalata in pittura da Michelangelo Merisi da Caravaggio col suo Amor vincit omnia.
@@ -1073,29 +1071,10 @@ de-->Am 12. Dezember 2012 führte Die Welt als erste überregionale Tageszeitung
 de-->Nach dem ersten halben Jahr mit einer Paywall zog der General Manager der digitalen Welt-Produkte (Welt Digital) bei einer Tagung des Bundesverbands Deutscher Zeitungsverleger eine erste Zwischenbilanz. Die konkrete Zahl der Zahler nannte er nicht; er bezeichnete sie als „ermutigend“. Nach eigenen Angaben betrug die Zahl der digitalen Abonnenten der Welt zum 30. Juni 2013 mehr als 47.000. Diskutiert wird allerdings die Aussagekraft der Zahlen hinsichtlich der Bereitschaft für Inhalte im Internet zu zahlen, da das Abo unter anderem in Kombination mit einem iPad Mini beworben und verkauft wurde. Im Juni 2016 hatte Die Welt mehr als 75.000 digitale Abonnenten. Am 15. September 2015 wurde die digitale Zeitung Welt Edition eingeführt. Sie ist die weiterentwickelte Version der bisherigen iPad-App Welt HD und das erste Angebot, das unter dem neuen Markendach Welt erschienen ist.
 de-->Mit der Zusammenlegung von Die Welt und N24 unter dem Dach von WeltN24 hat sich Welt.de zum gemeinsamen Nachrichtenportal gewandelt.
 de-->Seit 1999 verleiht Die Welt den internationalen Welt-Literaturpreis, mit dem sie an den Publizisten Willy Haas erinnern will. Der Preis ist mit 10.000 Euro dotiert und wird jährlich vergeben. Die bisherigen Preisträger sind:
-de-->1999: Bernhard Schlink
-de-->2000: Imre Kertész
-de-->2001: Pat Barker
-de-->2002: Leon de Winter
-de-->2003: Jeffrey Eugenides
-de-->2004: Amos Oz
-de-->2005: Yasmina Reza
-de-->2006: Rüdiger Safranski
-de-->2007: Daniel Kehlmann
-de-->2008: Hans Keilson
-de-->2009: Philip Roth
-de-->2010: Claude Lanzmann
-de-->2011: Albert Ostermaier
-de-->2012: Zeruya Shalev
-de-->2013: Jonathan Franzen
-de-->2014: Haruki Murakami
-de-->2015: Karl Ove Knausgård
-de-->2016: Zadie Smith
 de-->Seit 2010 lässt die Kulturredaktion einmal jährlich sog. Künstlerausgaben der Zeitung durch namhafte Bildende Künstler frei nach deren Vorstellung gestalten. Diese Kunstaktionen tragen stets den Titel Die Welt der/des [Künstlername]. Bis jetzt waren das
 de-->am 1. Oktober 2010: Georg Baselitz
 de-->am 6. Oktober 2011: Ellsworth Kelly
 de-->am 5. Oktober 2012: Gerhard Richter
-de-->am 30. Oktober 2013: Neo Rauch
 de-->am 11. Dezember 2014: Cindy Sherman
 de-->am 10. Dezember 2015: Julian Schnabel
 de-->am 24. November 2016: Isa Genzken
