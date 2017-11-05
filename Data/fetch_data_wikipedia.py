@@ -66,7 +66,7 @@ for searchs in [love, person, world]:
             i += 1
 
             # Split words for sentences folder
-            words = paragraph.split()
+            words = paragraph.split(' ')
             n_groups = len(words)/SHORT_TEXT_WORDS
             if n_groups < 1:
                 continue
@@ -74,9 +74,9 @@ for searchs in [love, person, world]:
             groups = np.array_split(words, n_groups)
 
             j = 0
-            for group in groups:
+            for group in groups:                
                 sentence = ' '.join(group)
-                short_text_filename = os.path.join(short_lang_folder, '{}_{}_{}'.format(lang, search.split(' ')[0],j))
+                short_text_filename = os.path.join(short_lang_folder, '{}_{}_{}_{}'.format(lang, search.split(' ')[0], i, j))
                 open(short_text_filename, 'w').write(sentence)
                 j += 1
                 if j >= 1000:

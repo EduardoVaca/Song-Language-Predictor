@@ -1,3 +1,6 @@
+import matplotlib.pyplot as plt
+import seaborn as sns
+
 from sklearn.datasets import load_files
 from sklearn import feature_extraction
 from sklearn.feature_extraction.text import CountVectorizer
@@ -37,6 +40,14 @@ pipe.fit(train_files, y_train)
 print('Model created!\nEvaluating...')
 y_predicted = pipe.predict(test_files)
 print(metrics.classification_report(y_test, y_predicted, target_names=dataset.target_names))
+cm = metrics.confusion_matrix(y_test, y_predicted)
+print(cm)
+
+# Plot confusion matrix
+plt.figure(figsize=(16, 16))
+sns.heatmap(cm, annot=True,  fmt='', xticklabels=dataset.target_names, yticklabels=dataset.target_names)
+plt.title('Confusion Matrix for Languages')
+plt.show()
 
 # Save the model to disk
 print('Saving model...')
