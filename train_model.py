@@ -5,12 +5,13 @@ from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn import linear_model
 from sklearn import metrics
 from sklearn import pipeline
+from sklearn.externals import joblib
 
 # Get the data from data set
 dataset = load_files('Data/sentences')
 
 # Split train and test data
-print("Splitting data...")
+print('Splitting data...')
 train_count = round(dataset.filenames.shape[0]*8/10)
 
 train_files = [open(f).read() for f in dataset.filenames[:train_count]]
@@ -20,7 +21,7 @@ y_train = dataset.target[:train_count]
 y_test = dataset.target[train_count:]
 
 # Create model
-print("Creating model...")
+print('Creating model...')
 vectorizer = feature_extraction.text.TfidfVectorizer(ngram_range=(1, 6),
                              analyzer='char',)
 pipe = pipeline.Pipeline([
@@ -29,25 +30,16 @@ pipe = pipeline.Pipeline([
 ])
 
 # Train model
-print("Training model...")
+print('Training model...')
 pipe.fit(train_files, y_train)
 
 # Obtain metrics
+print('Model created!\nEvaluating...')
 y_predicted = pipe.predict(test_files)
 print(metrics.classification_report(y_test, y_predicted, target_names=dataset.target_names))
 
-sentences = [
-    'Je ne dis pas ce que je faisais',
-    'Ich habe nich erzahlt was ich gemacht habe',
-    'Yo no dije lo que hice',
-    'I did not say what I have done',
-    'We zijn beiden beter gescheiden, maar mijn hart zal altijd van jou zijn',
-    'Non ho detto quello che ho fatto',
-    'You shoot me down, but I won\'t fall',
-    'Despacito, dale a mi vida amor despacito',
-    'Tonight, we are young. Do we set the world on fire?'
-]
+# Save the model to disk
+print('Saving model...')
+filename = 'language_model.sav'
+joblib.dump(pipe, filename)
 
-predicted = pipe.predict(sentences)
-for s, p in zip(sentences, predicted):
-    print ('The language of {} is --> {}'.format(s, dataset.target_names[p]))
