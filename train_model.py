@@ -7,7 +7,7 @@ from sklearn import metrics
 from sklearn import pipeline
 
 # Get the data from data set
-dataset = load_files('Data/paragraphs')
+dataset = load_files('Data/sentences')
 
 # Split train and test data
 print("Splitting data...")
@@ -42,7 +42,10 @@ sentences = [
     'Yo no dije lo que hice',
     'I did not say what I have done',
     'We zijn beiden beter gescheiden, maar mijn hart zal altijd van jou zijn',
-    'Non ho detto quello che ho fatto'
+    'Non ho detto quello che ho fatto',
+    'You shoot me down, but I won\'t fall',
+    'Despacito, dale a mi vida amor despacito',
+    'Tonight, we are young. Do we set the world on fire?'
 ]
 
 predicted = pipe.predict(sentences)
