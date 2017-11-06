@@ -45,7 +45,7 @@ class LyricsFetcher(object):
         except:
             return (False, 'No artist')
 
-    def get_snippet(self, n_snippets, artist, song=None):
+    def get_snippets(self, n_snippets, artist, song=None):
         """Gets n snippets from the song lyrics
         PARAMS:
         - artist : artist of the song
@@ -70,8 +70,3 @@ class LyricsFetcher(object):
         snippets = [s for s in lyrics.split('\n') if s != '']        
         random.shuffle(snippets)
         return snippets[:n_snippets]
-
-lf = LyricsFetcher()
-artist = 'Belinda'
-result = lf.get_snippet(5, artist, 'En la obscuridad')
-print(result)
