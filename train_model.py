@@ -6,6 +6,7 @@ from sklearn import feature_extraction
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn import linear_model
+from sklearn.svm import LinearSVC
 from sklearn import metrics
 from sklearn import pipeline
 from sklearn.externals import joblib
@@ -29,7 +30,7 @@ vectorizer = feature_extraction.text.TfidfVectorizer(ngram_range=(1, 6),
                              analyzer='char',)
 pipe = pipeline.Pipeline([
     ('vec', vectorizer),
-    ('clf', linear_model.LogisticRegression())
+    ('clf', LinearSVC())
 ])
 
 # Train model
@@ -51,6 +52,6 @@ plt.show()
 
 # Save the model to disk
 print('Saving model...')
-filename = 'language_model.sav'
+filename = 'language_model_svc.sav'
 joblib.dump(pipe, filename)
 
