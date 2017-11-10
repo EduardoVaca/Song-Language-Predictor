@@ -20,16 +20,18 @@ def create_ui_elements():
     intro = tk.Message(ROOT, text='\nThis project allows you to predict the language of a song based on a Logistic Regression model')
     intro.config(fg=FONT_COLOR, bg=BG_COLOR, font='Avenir 14', width=WIDTH-20)
     intro.pack()
+    tk.Label(ROOT, text='Artist', fg=FONT_COLOR, bg=BG_COLOR).pack()
+    e1 = tk.Entry(ROOT).pack()
+    tk.Label(ROOT, text='Song', fg=FONT_COLOR, bg=BG_COLOR).pack()
+    e2 = tk.Entry(ROOT).pack()
 
-def run():
-    ROOT.mainloop()
+    tk.mainloop( )
 
 def main():
     """Main program
     """
     configure_root()
     create_ui_elements()
-    run()
 
 if __name__ == '__main__':
     main()
