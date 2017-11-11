@@ -5,6 +5,8 @@ FONT_COLOR = 'white'
 HEIGHT = 500
 WIDTH = 500
 ROOT = tk.Tk()
+LANGUAGE_LB = tk.Label(ROOT, text='Language is:', fg=FONT_COLOR, bg=BG_COLOR, font='Avenir 14')
+PREDICTION_LB = tk.Label(ROOT, text='', fg=FONT_COLOR, bg=BG_COLOR, font='Avenir 16 bold')
 
 def configure_root():
     ROOT.title('Ich connais esa lied, I credo')
@@ -29,12 +31,14 @@ def create_ui_elements():
     song_entry.pack()
 
     tk.Label(ROOT, text='\n', fg=FONT_COLOR, bg=BG_COLOR).pack()
-    tk.Button(ROOT, text='Predict', command=lambda: predict_song(artist_entry.get(), song_entry.get()), font='Avenir 18 bold', width=10).pack()
+    tk.Button(ROOT, text='Predict', command=lambda: predict_song(artist_entry.get(), song_entry.get()), font='Avenir 18 bold', width=10).pack()    
     tk.Label(ROOT, text='\n', fg=FONT_COLOR, bg=BG_COLOR).pack()
-    tk.Button(ROOT, text='Reset', command=ROOT.quit, font='Avenir 12').pack()
+    LANGUAGE_LB.pack()
+    PREDICTION_LB.pack()
 
 def predict_song(artist, song):
     print('A: {}, s: {}'.format(artist, song))    
+    PREDICTION_LB.config(text='English')
 
 def reset():
     pass
