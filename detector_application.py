@@ -20,12 +20,26 @@ def create_ui_elements():
     intro = tk.Message(ROOT, text='\nThis project allows you to predict the language of a song based on a Logistic Regression model')
     intro.config(fg=FONT_COLOR, bg=BG_COLOR, font='Avenir 14', width=WIDTH-20)
     intro.pack()
+
     tk.Label(ROOT, text='Artist', fg=FONT_COLOR, bg=BG_COLOR).pack()
-    e1 = tk.Entry(ROOT).pack()
+    artist_entry = tk.Entry(ROOT, bd=0)
+    artist_entry.pack()
     tk.Label(ROOT, text='Song', fg=FONT_COLOR, bg=BG_COLOR).pack()
-    e2 = tk.Entry(ROOT).pack()
+    song_entry = tk.Entry(ROOT, bd=0)    
+    song_entry.pack()
+
+    tk.Label(ROOT, text='\n', fg=FONT_COLOR, bg=BG_COLOR).pack()
+    tk.Button(ROOT, text='Predict', command=predict_song, font='Avenir 18 bold', width=10).pack()
+    tk.Label(ROOT, text='\n', fg=FONT_COLOR, bg=BG_COLOR).pack()
+    tk.Button(ROOT, text='Reset', command=predict_song, font='Avenir 12').pack()
 
     tk.mainloop( )
+
+def predict_song():
+    pass
+
+def reset():
+    pass
 
 def main():
     """Main program
