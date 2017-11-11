@@ -29,14 +29,12 @@ def create_ui_elements():
     song_entry.pack()
 
     tk.Label(ROOT, text='\n', fg=FONT_COLOR, bg=BG_COLOR).pack()
-    tk.Button(ROOT, text='Predict', command=predict_song, font='Avenir 18 bold', width=10).pack()
+    tk.Button(ROOT, text='Predict', command=lambda: predict_song(artist_entry.get(), song_entry.get()), font='Avenir 18 bold', width=10).pack()
     tk.Label(ROOT, text='\n', fg=FONT_COLOR, bg=BG_COLOR).pack()
-    tk.Button(ROOT, text='Reset', command=predict_song, font='Avenir 12').pack()
+    tk.Button(ROOT, text='Reset', command=ROOT.quit, font='Avenir 12').pack()
 
-    tk.mainloop( )
-
-def predict_song():
-    pass
+def predict_song(artist, song):
+    print('A: {}, s: {}'.format(artist, song))    
 
 def reset():
     pass
@@ -46,6 +44,7 @@ def main():
     """
     configure_root()
     create_ui_elements()
+    tk.mainloop()
 
 if __name__ == '__main__':
     main()
