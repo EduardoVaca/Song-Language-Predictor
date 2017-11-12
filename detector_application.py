@@ -1,5 +1,5 @@
 import tkinter as tk
-import lyrics_fetcher
+import language_predictor
 from sklearn.datasets import load_files
 from sklearn.externals import joblib
 
@@ -11,9 +11,7 @@ ROOT = tk.Tk()
 LANGUAGE_LB = tk.Label(ROOT, text='Language is:', fg=FONT_COLOR, bg=BG_COLOR, font='Avenir 14')
 PREDICTION_LB = tk.Label(ROOT, text='', fg=FONT_COLOR, bg=BG_COLOR, font='Avenir 16 bold')
 
-dataset = load_files('Data/sentences')
-loaded_model = joblib.load('language_model.sav')
-lyrics_f = lyrics_fetcher.LyricsFetcher()
+lang_predictor = language_predictor.LanguagePredictor()
 
 def configure_root():
     ROOT.title('Ich connais esa lied, I credo')
@@ -45,19 +43,14 @@ def create_ui_elements():
 
 def predict_song(artist, song):
     LANGUAGE_LB.config(text='Searching song...')
-    snippets = lyrics_f.get_snippets(5, artist) if not song else lyrics_f.get_snippets(5, artist, song)
-    if snippets:
-        predicted = loaded_model.predict(snippets)
-        for s, p in zip(snippets, predicted):
-            print('The language of \"{}\" is {}'.format(s, dataset.target_names[p]))
+    result = lang_predictor.predict_language(artist, song)
+    if result[0]:        
         LANGUAGE_LB.config(text='Language is:')
-        PREDICTION_LB.config(text='{}'.format(dataset.target_names[predicted[0]]))
+        PREDICTION_LB.config(text='{}'.format(result[0]))
+        print(result[1])
     else:
         LANGUAGE_LB.config(text='No song found...')
     print('A: {}, s: {}'.format(artist, song))     
-
-def reset():
-    pass
 
 def main():
     """Main program

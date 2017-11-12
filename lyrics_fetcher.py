@@ -58,7 +58,7 @@ class LyricsFetcher(object):
             song = self.get_random_song_from_artist(artist)[1]
         result = self.get_lyrics(artist, song)
         return self.song_snippets(result[1], n_snippets) if result[0] else []
-    
+
     def song_snippets(self, lyrics, n_snippets):
         """Gets snippets from the song
         PARAMS:
@@ -66,7 +66,7 @@ class LyricsFetcher(object):
         - n_snippets: number of snippets to get
         RETURNS:
         - list of n snippets
-        """       
-        snippets = [s for s in lyrics.split('\n') if s != '']        
+        """
+        snippets = [s for s in lyrics.split('\n') if s != '']
         random.shuffle(snippets)
         return snippets[:n_snippets]
