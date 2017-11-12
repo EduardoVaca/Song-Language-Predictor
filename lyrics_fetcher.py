@@ -54,9 +54,17 @@ class LyricsFetcher(object):
         RETURNS:
         - tuple, (list of snippets, song title)
         """
+        print('*******{}{}*******'.format(artist, '->'+song if song else ''))
         if not song:
-            song = self.get_random_song_from_artist(artist)[1]
-        result = self.get_lyrics(artist, song)
+            for _ in range(5):
+                print('Searching song...')
+                song = self.get_random_song_from_artist(artist)[1]
+                result = self.get_lyrics(artist, song)
+                if result[0]:
+                    break
+        else:
+            result = self.get_lyrics(artist, song)
+        print('*********************')
         return (self.song_snippets(result[1], n_snippets) if result[0] else [], song)
 
     def song_snippets(self, lyrics, n_snippets):
