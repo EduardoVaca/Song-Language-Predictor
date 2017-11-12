@@ -1,3 +1,4 @@
+import time
 import tkinter as tk
 import language_predictor
 from sklearn.datasets import load_files
@@ -6,7 +7,7 @@ from sklearn.externals import joblib
 BG_COLOR = 'black'
 FONT_COLOR = 'white'
 HEIGHT = 700
-WIDTH = 500
+WIDTH = 600
 ROOT = tk.Tk()
 LANGUAGE_LB = tk.Label(ROOT, text='Language is:', fg=FONT_COLOR, bg=BG_COLOR, font='Avenir 14')
 PREDICTION_LB = tk.Label(ROOT, text='', fg=FONT_COLOR, bg=BG_COLOR, font='Avenir 16 bold')
@@ -48,20 +49,19 @@ def create_ui_elements():
     PREDICTION_LB.pack()
     ANALYSIS_LB.pack()
 
-def predict_song(artist, song, song_entry, show_snippets):
+def predict_song(artist, song, song_entry, show_snippets):    
     LANGUAGE_LB.config(text='Searching song...')
     result = lang_predictor.predict_language(artist, song)
     if result[0]:        
         LANGUAGE_LB.config(text='Language is:')
-        PREDICTION_LB.config(text='{}'.format(result[0]))
-        print(result[1])
-        if show_snippets:
-            ANALYSIS_LB.config(text=result[1])
+        PREDICTION_LB.config(text='{}'.format(result[0]))        
+        ANALYSIS_LB.config(text=result[1] if show_snippets else '')
         if not song:
             song_entry.insert(0, result[2])
     else:
         LANGUAGE_LB.config(text='No song found...')
-    print('A: {}, s: {}'.format(artist, song))     
+        PREDICTION_LB.config(text='')
+        ANALYSIS_LB.config(text='')
 
 def main():
     """Main program
