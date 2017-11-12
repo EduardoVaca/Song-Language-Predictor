@@ -43,11 +43,11 @@ class LanguagePredictor(object):
         - song : song's title
         - snippets_n : number of snippets to consider (default=5)
         RETURNS:
-        - tuple (prediction, analysis) if song found else (None, [])
+        - tuple (prediction, analysis, song title) if song found else (None)
         """
-        snippets = self.lyrics_f.get_snippets(snippets_n, artist) if not song else self.lyrics_f.get_snippets(snippets_n, artist, song)
-        if snippets:
-            predicted = self.model.predict(snippets)
-            return (self.best_prediction(predicted), self.snippets_analyisis(predicted, snippets))
+        snippets_result = self.lyrics_f.get_snippets(snippets_n, artist) if not song else self.lyrics_f.get_snippets(snippets_n, artist, song)
+        if snippets_result[0]:
+            predicted = self.model.predict(snippets_result[0])
+            return (self.best_prediction(predicted), self.snippets_analyisis(predicted, snippets_result[0]), snippets_result[1])
         else:
-            return (None, [])
+            return (None)

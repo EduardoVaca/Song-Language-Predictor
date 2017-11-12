@@ -36,18 +36,20 @@ def create_ui_elements():
     song_entry.pack()
 
     tk.Label(ROOT, text='\n', fg=FONT_COLOR, bg=BG_COLOR).pack()
-    tk.Button(ROOT, text='Predict', command=lambda: predict_song(artist_entry.get(), song_entry.get()), font='Avenir 18 bold', width=10).pack()    
+    tk.Button(ROOT, text='Predict', command=lambda: predict_song(artist_entry.get(), song_entry.get(), song_entry), font='Avenir 18 bold', width=10).pack()    
     tk.Label(ROOT, text='\n', fg=FONT_COLOR, bg=BG_COLOR).pack()
     LANGUAGE_LB.pack()
     PREDICTION_LB.pack()
 
-def predict_song(artist, song):
+def predict_song(artist, song, song_entry):
     LANGUAGE_LB.config(text='Searching song...')
     result = lang_predictor.predict_language(artist, song)
     if result[0]:        
         LANGUAGE_LB.config(text='Language is:')
         PREDICTION_LB.config(text='{}'.format(result[0]))
         print(result[1])
+        if not song:
+            song_entry.insert(0, result[2])
     else:
         LANGUAGE_LB.config(text='No song found...')
     print('A: {}, s: {}'.format(artist, song))     
