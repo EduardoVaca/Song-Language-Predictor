@@ -5,11 +5,12 @@ from sklearn.externals import joblib
 
 BG_COLOR = 'black'
 FONT_COLOR = 'white'
-HEIGHT = 500
+HEIGHT = 700
 WIDTH = 500
 ROOT = tk.Tk()
 LANGUAGE_LB = tk.Label(ROOT, text='Language is:', fg=FONT_COLOR, bg=BG_COLOR, font='Avenir 14')
 PREDICTION_LB = tk.Label(ROOT, text='', fg=FONT_COLOR, bg=BG_COLOR, font='Avenir 16 bold')
+ANALYSIS_LB = tk.Message(ROOT, text='', fg=FONT_COLOR, bg=BG_COLOR, font='Avenir 14', width=WIDTH-20)
 
 lang_predictor = language_predictor.LanguagePredictor()
 
@@ -35,19 +36,27 @@ def create_ui_elements():
     song_entry = tk.Entry(ROOT, bd=0)    
     song_entry.pack()
 
+    # Checkbox
     tk.Label(ROOT, text='\n', fg=FONT_COLOR, bg=BG_COLOR).pack()
-    tk.Button(ROOT, text='Predict', command=lambda: predict_song(artist_entry.get(), song_entry.get(), song_entry), font='Avenir 18 bold', width=10).pack()    
+    show_analyisis = tk.IntVar()
+    tk.Checkbutton(ROOT, text="Show snippets", variable=show_analyisis).pack()
+    # Predict button
+    tk.Label(ROOT, text='\n', fg=FONT_COLOR, bg=BG_COLOR).pack()
+    tk.Button(ROOT, text='Predict', command=lambda: predict_song(artist_entry.get(), song_entry.get(), song_entry, show_analyisis.get()), font='Avenir 18 bold', width=10).pack()    
     tk.Label(ROOT, text='\n', fg=FONT_COLOR, bg=BG_COLOR).pack()
     LANGUAGE_LB.pack()
     PREDICTION_LB.pack()
+    ANALYSIS_LB.pack()
 
-def predict_song(artist, song, song_entry):
+def predict_song(artist, song, song_entry, show_snippets):
     LANGUAGE_LB.config(text='Searching song...')
     result = lang_predictor.predict_language(artist, song)
     if result[0]:        
         LANGUAGE_LB.config(text='Language is:')
         PREDICTION_LB.config(text='{}'.format(result[0]))
         print(result[1])
+        if show_snippets:
+            ANALYSIS_LB.config(text=result[1])
         if not song:
             song_entry.insert(0, result[2])
     else:
