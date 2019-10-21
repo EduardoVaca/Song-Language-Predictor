@@ -14,6 +14,6 @@ scikit-learn==0.19.1
 scipy==1.0.0
 seaborn==0.8.1
 six==1.11.0
-urllib3==1.22
+urllib3==1.24.2
 wheel==0.24.0
 wikipedia==1.4.0
